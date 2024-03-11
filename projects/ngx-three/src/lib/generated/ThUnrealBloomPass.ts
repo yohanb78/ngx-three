@@ -12,7 +12,7 @@ import {
   Vector3,
   WebGLRenderTarget,
 } from 'three';
-import { FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js.js';
+import { FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js';
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
 import { ThPassBase } from '../ThPassBase';
 import { applyValue } from '../util';
