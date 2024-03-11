@@ -5,7 +5,7 @@
 import { ChangeDetectionStrategy, Component, Input, Type, forwardRef } from '@angular/core';
 import { ShaderMaterial, Vector2 } from 'three';
 import { DotScreenPass } from 'three/examples/jsm/postprocessing/DotScreenPass.js';
-import { FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js.js';
+import { FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js';
 import { ThPassBase } from '../ThPassBase';
 import { ThPass } from './ThPass';
 

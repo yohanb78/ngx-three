@@ -5,7 +5,7 @@
 import { ChangeDetectionStrategy, Component, Input, Type, forwardRef } from '@angular/core';
 import { Camera, Color, ColorRepresentation, MeshDepthMaterial, Scene, ShaderMaterial, WebGLRenderTarget } from 'three';
 import { BokehPass, BokehPassParamters } from 'three/examples/jsm/postprocessing/BokehPass.js';
-import { FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js.js';
+import { FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js';
 import { ThPassBase } from '../ThPassBase';
 import { applyValue } from '../util';
 import { ThPass } from './ThPass';

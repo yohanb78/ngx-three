@@ -14,7 +14,7 @@ import {
   Vector2,
   WebGLRenderTarget,
 } from 'three';
-import { FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js.js';
+import { FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js';
 import { SAOPass, SAOPassParams } from 'three/examples/jsm/postprocessing/SAOPass.js';
 import { ThPassBase } from '../ThPassBase';
 import { applyValue } from '../util';

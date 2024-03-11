@@ -5,8 +5,8 @@
 import { ChangeDetectionStrategy, Component, Input, Type } from '@angular/core';
 import { Clock, WebGLRenderTarget, WebGLRenderer } from 'three';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
-import { Pass } from 'three/examples/jsm/postprocessing/Pass.js.js';
-import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js.js';
+import { Pass } from 'three/examples/jsm/postprocessing/Pass.js';
+import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
 import { ThWrapperBase } from '../ThWrapperBase';
 
 @Component({

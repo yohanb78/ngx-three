@@ -15,8 +15,8 @@ import {
   WebGLRenderTarget,
   WebGLRenderer,
 } from 'three';
-import { ReflectorForSSRPass } from 'three/examples/jsm/objects/ReflectorForSSRPass.js.js';
-import { FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js.js';
+import { ReflectorForSSRPass } from 'three/examples/jsm/objects/ReflectorForSSRPass.js';
+import { FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js';
 import { SSRPass, SSRPassParams } from 'three/examples/jsm/postprocessing/SSRPass.js';
 import { ThPassBase } from '../ThPassBase';
 import { applyValue } from '../util';

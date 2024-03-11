@@ -18,7 +18,7 @@ import {
   WebGLRenderTarget,
 } from 'three';
 import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass.js';
-import { FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js.js';
+import { FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js';
 import { ThPassBase } from '../ThPassBase';
 import { applyValue } from '../util';
 import { ThPass } from './ThPass';
