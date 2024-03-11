@@ -3,7 +3,7 @@
 /* eslint-disable @angular-eslint/component-selector, @angular-eslint/component-class-suffix */
 import { ChangeDetectionStrategy, Component, forwardRef, Input, Type } from '@angular/core';
 import { BufferGeometry, Material, Quaternion, Vector3 } from 'three';
-import { TransformControlsPlane } from 'three/examples/jsm/controls/TransformControls';
+import { TransformControlsPlane } from 'three/examples/jsm/controls/TransformControls.js';
 import { ThControlBase } from '../ThControlBase';
 import { applyValue } from '../util';
 import { ThMesh } from './ThMesh';

@@ -2,13 +2,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable @angular-eslint/component-selector, @angular-eslint/component-class-suffix */
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  Type,
-  forwardRef,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, Type, forwardRef } from '@angular/core';
 import {
   Camera,
   Color,
@@ -20,11 +14,8 @@ import {
   Vector3,
   WebGLRenderTarget,
 } from 'three';
-import { FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js';
-import {
-  SSAOPass,
-  SSAOPassOUTPUT,
-} from 'three/examples/jsm/postprocessing/SSAOPass';
+import { FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js.js';
+import { SSAOPass, SSAOPassOUTPUT } from 'three/examples/jsm/postprocessing/SSAOPass.js';
 import { ThPassBase } from '../ThPassBase';
 import { applyValue } from '../util';
 import { ThPass } from './ThPass';
@@ -33,9 +24,7 @@ import { ThPass } from './ThPass';
   selector: 'th-sSAOPass',
   template: '<ng-content/>',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [
-    { provide: ThPassBase, useExisting: forwardRef(() => ThSSAOPass) },
-  ],
+  providers: [{ provide: ThPassBase, useExisting: forwardRef(() => ThSSAOPass) }],
 })
 export class ThSSAOPass<
   T extends SSAOPass = SSAOPass,
@@ -268,10 +257,7 @@ export class ThSSAOPass<
   @Input()
   public set originalClearColor(value: Color | [color: ColorRepresentation]) {
     if (this._objRef) {
-      this._objRef.originalClearColor = applyValue<Color>(
-        this._objRef.originalClearColor,
-        value,
-      );
+      this._objRef.originalClearColor = applyValue<Color>(this._objRef.originalClearColor, value);
     }
   }
   public get originalClearColor(): Color | undefined {

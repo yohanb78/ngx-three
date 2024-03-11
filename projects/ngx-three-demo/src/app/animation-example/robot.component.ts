@@ -1,13 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RenderState } from 'ngx-three';
 import { AnimationAction, AnimationMixer, LoopOnce, Mesh } from 'three';
-import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
+import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { ASSET_PATH } from '../assets';
 
 @Component({
   selector: 'app-robot',
   templateUrl: './robot.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RobotComponent {
   public readonly assetPath = ASSET_PATH + 'RobotExpressive.glb';

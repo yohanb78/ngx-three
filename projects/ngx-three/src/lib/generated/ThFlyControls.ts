@@ -1,24 +1,16 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable @angular-eslint/component-selector, @angular-eslint/component-class-suffix */
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  Type,
-  forwardRef,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, Type, forwardRef } from '@angular/core';
 import { Camera } from 'three';
-import { FlyControls } from 'three/examples/jsm/controls/FlyControls';
+import { FlyControls } from 'three/examples/jsm/controls/FlyControls.js';
 import { ThControlBase } from '../ThControlBase';
 
 @Component({
   selector: 'th-flyControls',
   template: '<ng-content/>',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [
-    { provide: ThControlBase, useExisting: forwardRef(() => ThFlyControls) },
-  ],
+  providers: [{ provide: ThControlBase, useExisting: forwardRef(() => ThFlyControls) }],
 })
 export class ThFlyControls<
   T extends FlyControls = FlyControls,

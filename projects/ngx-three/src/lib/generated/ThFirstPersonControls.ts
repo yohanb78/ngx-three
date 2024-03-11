@@ -1,15 +1,9 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable @angular-eslint/component-selector, @angular-eslint/component-class-suffix */
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  Type,
-  forwardRef,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, Type, forwardRef } from '@angular/core';
 import { Camera } from 'three';
-import { FirstPersonControls } from 'three/examples/jsm/controls/FirstPersonControls';
+import { FirstPersonControls } from 'three/examples/jsm/controls/FirstPersonControls.js';
 import { ThControlBase } from '../ThControlBase';
 
 @Component({

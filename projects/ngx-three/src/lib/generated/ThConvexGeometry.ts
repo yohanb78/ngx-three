@@ -1,14 +1,9 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable @angular-eslint/component-selector, @angular-eslint/component-class-suffix */
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Type,
-  forwardRef,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Type, forwardRef } from '@angular/core';
 import { NormalBufferAttributes, Vector3 } from 'three';
-import { ConvexGeometry } from 'three/examples/jsm/geometries/ConvexGeometry';
+import { ConvexGeometry } from 'three/examples/jsm/geometries/ConvexGeometry.js';
 import { ThBufferGeometry } from './ThBufferGeometry';
 
 @Component({

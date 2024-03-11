@@ -2,22 +2,10 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable @angular-eslint/component-selector, @angular-eslint/component-class-suffix */
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  Type,
-  forwardRef,
-} from '@angular/core';
-import {
-  Camera,
-  ColorRepresentation,
-  Scene,
-  ShaderMaterial,
-  WebGLRenderTarget,
-} from 'three';
-import { FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js';
-import { SSAARenderPass } from 'three/examples/jsm/postprocessing/SSAARenderPass';
+import { ChangeDetectionStrategy, Component, Input, Type, forwardRef } from '@angular/core';
+import { Camera, ColorRepresentation, Scene, ShaderMaterial, WebGLRenderTarget } from 'three';
+import { FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js.js';
+import { SSAARenderPass } from 'three/examples/jsm/postprocessing/SSAARenderPass.js';
 import { ThPassBase } from '../ThPassBase';
 import { ThPass } from './ThPass';
 
@@ -25,18 +13,11 @@ import { ThPass } from './ThPass';
   selector: 'th-sSAARenderPass',
   template: '<ng-content/>',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [
-    { provide: ThPassBase, useExisting: forwardRef(() => ThSSAARenderPass) },
-  ],
+  providers: [{ provide: ThPassBase, useExisting: forwardRef(() => ThSSAARenderPass) }],
 })
 export class ThSSAARenderPass<
   T extends SSAARenderPass = SSAARenderPass,
-  TARGS = [
-    scene: Scene,
-    camera: Camera,
-    clearColor?: ColorRepresentation,
-    clearAlpha?: number,
-  ],
+  TARGS = [scene: Scene, camera: Camera, clearColor?: ColorRepresentation, clearAlpha?: number],
 > extends ThPass<T, TARGS> {
   public getType(): Type<SSAARenderPass> {
     return SSAARenderPass;

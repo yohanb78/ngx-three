@@ -2,16 +2,10 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable @angular-eslint/component-selector, @angular-eslint/component-class-suffix */
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  Type,
-  forwardRef,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, Type, forwardRef } from '@angular/core';
 import { ShaderMaterial, WebGLRenderTarget } from 'three';
-import { FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js';
-import { SavePass } from 'three/examples/jsm/postprocessing/SavePass';
+import { FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js.js';
+import { SavePass } from 'three/examples/jsm/postprocessing/SavePass.js';
 import { ThPassBase } from '../ThPassBase';
 import { ThPass } from './ThPass';
 
@@ -19,14 +13,12 @@ import { ThPass } from './ThPass';
   selector: 'th-savePass',
   template: '<ng-content/>',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [
-    { provide: ThPassBase, useExisting: forwardRef(() => ThSavePass) },
-  ],
+  providers: [{ provide: ThPassBase, useExisting: forwardRef(() => ThSavePass) }],
 })
-export class ThSavePass<
-  T extends SavePass = SavePass,
-  TARGS = /* renderTarget? */ WebGLRenderTarget,
-> extends ThPass<T, TARGS> {
+export class ThSavePass<T extends SavePass = SavePass, TARGS = /* renderTarget? */ WebGLRenderTarget> extends ThPass<
+  T,
+  TARGS
+> {
   public getType(): Type<SavePass> {
     return SavePass;
   }
@@ -59,9 +51,7 @@ export class ThSavePass<
   }
 
   public get uniforms(): { [name: string]: { value: any } } | undefined {
-    return this._objRef?.uniforms as
-      | { [name: string]: { value: any } }
-      | undefined;
+    return this._objRef?.uniforms as { [name: string]: { value: any } } | undefined;
   }
   @Input()
   public set material(value: ShaderMaterial) {

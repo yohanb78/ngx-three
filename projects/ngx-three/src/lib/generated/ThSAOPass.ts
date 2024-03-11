@@ -2,13 +2,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable @angular-eslint/component-selector, @angular-eslint/component-class-suffix */
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  Type,
-  forwardRef,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, Type, forwardRef } from '@angular/core';
 import {
   Camera,
   Color,
@@ -20,11 +14,8 @@ import {
   Vector2,
   WebGLRenderTarget,
 } from 'three';
-import { FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js';
-import {
-  SAOPass,
-  SAOPassParams,
-} from 'three/examples/jsm/postprocessing/SAOPass';
+import { FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js.js';
+import { SAOPass, SAOPassParams } from 'three/examples/jsm/postprocessing/SAOPass.js';
 import { ThPassBase } from '../ThPassBase';
 import { applyValue } from '../util';
 import { ThPass } from './ThPass';
@@ -33,19 +24,11 @@ import { ThPass } from './ThPass';
   selector: 'th-sAOPass',
   template: '<ng-content/>',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [
-    { provide: ThPassBase, useExisting: forwardRef(() => ThSAOPass) },
-  ],
+  providers: [{ provide: ThPassBase, useExisting: forwardRef(() => ThSAOPass) }],
 })
 export class ThSAOPass<
   T extends SAOPass = SAOPass,
-  TARGS = [
-    scene: Scene,
-    camera: Camera,
-    depthTexture?: boolean,
-    useNormals?: boolean,
-    resolution?: Vector2,
-  ],
+  TARGS = [scene: Scene, camera: Camera, depthTexture?: boolean, useNormals?: boolean, resolution?: Vector2],
 > extends ThPass<T, TARGS> {
   public getType(): Type<SAOPass> {
     return SAOPass;
@@ -94,10 +77,7 @@ export class ThSAOPass<
   @Input()
   public set originalClearColor(value: Color | [color: ColorRepresentation]) {
     if (this._objRef) {
-      this._objRef.originalClearColor = applyValue<Color>(
-        this._objRef.originalClearColor,
-        value,
-      );
+      this._objRef.originalClearColor = applyValue<Color>(this._objRef.originalClearColor, value);
     }
   }
   public get originalClearColor(): Color | undefined {
@@ -106,10 +86,7 @@ export class ThSAOPass<
   @Input()
   public set oldClearColor(value: Color | [color: ColorRepresentation]) {
     if (this._objRef) {
-      this._objRef.oldClearColor = applyValue<Color>(
-        this._objRef.oldClearColor,
-        value,
-      );
+      this._objRef.oldClearColor = applyValue<Color>(this._objRef.oldClearColor, value);
     }
   }
   public get oldClearColor(): Color | undefined {
@@ -128,10 +105,7 @@ export class ThSAOPass<
   @Input()
   public set resolution(value: Vector2 | [x: number, y: number]) {
     if (this._objRef) {
-      this._objRef.resolution = applyValue<Vector2>(
-        this._objRef.resolution,
-        value,
-      );
+      this._objRef.resolution = applyValue<Vector2>(this._objRef.resolution, value);
     }
   }
   public get resolution(): Vector2 | undefined {

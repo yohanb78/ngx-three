@@ -1,14 +1,9 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable @angular-eslint/component-selector, @angular-eslint/component-class-suffix */
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Type,
-  forwardRef,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Type, forwardRef } from '@angular/core';
 import { Euler, Mesh, NormalBufferAttributes, Vector3 } from 'three';
-import { DecalGeometry } from 'three/examples/jsm/geometries/DecalGeometry';
+import { DecalGeometry } from 'three/examples/jsm/geometries/DecalGeometry.js';
 import { ThBufferGeometry } from './ThBufferGeometry';
 
 @Component({

@@ -3,7 +3,7 @@
 /* eslint-disable @angular-eslint/component-selector, @angular-eslint/component-class-suffix,  */
 import { ChangeDetectionStrategy, Component, forwardRef, Input, Type } from '@angular/core';
 import { Camera, Object3D } from 'three';
-import { TransformControls } from 'three/examples/jsm/controls/TransformControls';
+import { TransformControls } from 'three/examples/jsm/controls/TransformControls.js';
 import { ThControlBase } from '../../ThControlBase';
 import { ThTransformControlsGen } from '../ThTransformControlsGen';
 

@@ -2,15 +2,9 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable @angular-eslint/component-selector, @angular-eslint/component-class-suffix */
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  Type,
-  forwardRef,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, Type, forwardRef } from '@angular/core';
 import { ColorRepresentation } from 'three';
-import { ClearPass } from 'three/examples/jsm/postprocessing/ClearPass';
+import { ClearPass } from 'three/examples/jsm/postprocessing/ClearPass.js';
 import { ThPassBase } from '../ThPassBase';
 import { ThPass } from './ThPass';
 
@@ -18,9 +12,7 @@ import { ThPass } from './ThPass';
   selector: 'th-clearPass',
   template: '<ng-content/>',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [
-    { provide: ThPassBase, useExisting: forwardRef(() => ThClearPass) },
-  ],
+  providers: [{ provide: ThPassBase, useExisting: forwardRef(() => ThClearPass) }],
 })
 export class ThClearPass<
   T extends ClearPass = ClearPass,

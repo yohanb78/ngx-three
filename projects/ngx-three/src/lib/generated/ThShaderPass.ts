@@ -2,16 +2,10 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable @angular-eslint/component-selector, @angular-eslint/component-class-suffix */
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  Type,
-  forwardRef,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, Type, forwardRef } from '@angular/core';
 import { ShaderMaterial } from 'three';
-import { FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js';
-import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass';
+import { FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js.js';
+import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
 import { ThPassBase } from '../ThPassBase';
 import { ThPass } from './ThPass';
 
@@ -19,9 +13,7 @@ import { ThPass } from './ThPass';
   selector: 'th-shaderPass',
   template: '<ng-content/>',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [
-    { provide: ThPassBase, useExisting: forwardRef(() => ThShaderPass) },
-  ],
+  providers: [{ provide: ThPassBase, useExisting: forwardRef(() => ThShaderPass) }],
 })
 export class ThShaderPass<
   T extends ShaderPass = ShaderPass,
@@ -49,9 +41,7 @@ export class ThShaderPass<
   }
 
   public get uniforms(): { [name: string]: { value: any } } | undefined {
-    return this._objRef?.uniforms as
-      | { [name: string]: { value: any } }
-      | undefined;
+    return this._objRef?.uniforms as { [name: string]: { value: any } } | undefined;
   }
   @Input()
   public set material(value: ShaderMaterial) {

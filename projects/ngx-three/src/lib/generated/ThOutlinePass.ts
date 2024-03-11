@@ -2,13 +2,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable @angular-eslint/component-selector, @angular-eslint/component-class-suffix */
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  Type,
-  forwardRef,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, Type, forwardRef } from '@angular/core';
 import {
   Camera,
   Color,
@@ -23,8 +17,8 @@ import {
   Vector2,
   WebGLRenderTarget,
 } from 'three';
-import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass';
-import { FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js';
+import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass.js';
+import { FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js.js';
 import { ThPassBase } from '../ThPassBase';
 import { applyValue } from '../util';
 import { ThPass } from './ThPass';
@@ -33,18 +27,11 @@ import { ThPass } from './ThPass';
   selector: 'th-outlinePass',
   template: '<ng-content/>',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [
-    { provide: ThPassBase, useExisting: forwardRef(() => ThOutlinePass) },
-  ],
+  providers: [{ provide: ThPassBase, useExisting: forwardRef(() => ThOutlinePass) }],
 })
 export class ThOutlinePass<
   T extends OutlinePass = OutlinePass,
-  TARGS = [
-    resolution: Vector2,
-    scene: Scene,
-    camera: Camera,
-    selectedObjects?: Object3D[],
-  ],
+  TARGS = [resolution: Vector2, scene: Scene, camera: Camera, selectedObjects?: Object3D[]],
 > extends ThPass<T, TARGS> {
   public getType(): Type<OutlinePass> {
     return OutlinePass;
@@ -83,10 +70,7 @@ export class ThOutlinePass<
   @Input()
   public set visibleEdgeColor(value: Color | [color: ColorRepresentation]) {
     if (this._objRef) {
-      this._objRef.visibleEdgeColor = applyValue<Color>(
-        this._objRef.visibleEdgeColor,
-        value,
-      );
+      this._objRef.visibleEdgeColor = applyValue<Color>(this._objRef.visibleEdgeColor, value);
     }
   }
   public get visibleEdgeColor(): Color | undefined {
@@ -95,10 +79,7 @@ export class ThOutlinePass<
   @Input()
   public set hiddenEdgeColor(value: Color | [color: ColorRepresentation]) {
     if (this._objRef) {
-      this._objRef.hiddenEdgeColor = applyValue<Color>(
-        this._objRef.hiddenEdgeColor,
-        value,
-      );
+      this._objRef.hiddenEdgeColor = applyValue<Color>(this._objRef.hiddenEdgeColor, value);
     }
   }
   public get hiddenEdgeColor(): Color | undefined {
@@ -167,10 +148,7 @@ export class ThOutlinePass<
   @Input()
   public set resolution(value: Vector2 | [x: number, y: number]) {
     if (this._objRef) {
-      this._objRef.resolution = applyValue<Vector2>(
-        this._objRef.resolution,
-        value,
-      );
+      this._objRef.resolution = applyValue<Vector2>(this._objRef.resolution, value);
     }
   }
   public get resolution(): Vector2 | undefined {
@@ -349,10 +327,7 @@ export class ThOutlinePass<
   @Input()
   public set oldClearColor(value: Color | [color: ColorRepresentation]) {
     if (this._objRef) {
-      this._objRef.oldClearColor = applyValue<Color>(
-        this._objRef.oldClearColor,
-        value,
-      );
+      this._objRef.oldClearColor = applyValue<Color>(this._objRef.oldClearColor, value);
     }
   }
   public get oldClearColor(): Color | undefined {
@@ -381,10 +356,7 @@ export class ThOutlinePass<
   @Input()
   public set tempPulseColor1(value: Color | [color: ColorRepresentation]) {
     if (this._objRef) {
-      this._objRef.tempPulseColor1 = applyValue<Color>(
-        this._objRef.tempPulseColor1,
-        value,
-      );
+      this._objRef.tempPulseColor1 = applyValue<Color>(this._objRef.tempPulseColor1, value);
     }
   }
   public get tempPulseColor1(): Color | undefined {
@@ -393,10 +365,7 @@ export class ThOutlinePass<
   @Input()
   public set tempPulseColor2(value: Color | [color: ColorRepresentation]) {
     if (this._objRef) {
-      this._objRef.tempPulseColor2 = applyValue<Color>(
-        this._objRef.tempPulseColor2,
-        value,
-      );
+      this._objRef.tempPulseColor2 = applyValue<Color>(this._objRef.tempPulseColor2, value);
     }
   }
   public get tempPulseColor2(): Color | undefined {
@@ -426,10 +395,7 @@ export class ThOutlinePass<
         ],
   ) {
     if (this._objRef) {
-      this._objRef.textureMatrix = applyValue<Matrix4>(
-        this._objRef.textureMatrix,
-        value,
-      );
+      this._objRef.textureMatrix = applyValue<Matrix4>(this._objRef.textureMatrix, value);
     }
   }
   public get textureMatrix(): Matrix4 | undefined {

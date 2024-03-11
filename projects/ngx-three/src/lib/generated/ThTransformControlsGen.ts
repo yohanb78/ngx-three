@@ -1,15 +1,9 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable @angular-eslint/component-selector, @angular-eslint/component-class-suffix */
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  Type,
-  forwardRef,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, Type, forwardRef } from '@angular/core';
 import { Camera, MOUSE, Object3D } from 'three';
-import { TransformControls } from 'three/examples/jsm/controls/TransformControls';
+import { TransformControls } from 'three/examples/jsm/controls/TransformControls.js';
 import { ThControlBase } from '../ThControlBase';
 
 @Component({
@@ -72,17 +66,13 @@ export class ThTransformControlsGen<
     return this._objRef?.enabled;
   }
   @Input()
-  public set axis(
-    value: 'X' | 'Y' | 'Z' | 'E' | 'XY' | 'YZ' | 'XZ' | 'XYZ' | 'XYZE' | null,
-  ) {
+  public set axis(value: 'X' | 'Y' | 'Z' | 'E' | 'XY' | 'YZ' | 'XZ' | 'XYZ' | 'XYZE' | null) {
     if (this._objRef) {
       this._objRef.axis = value;
     }
   }
 
-  public get axis():
-    | ('X' | 'Y' | 'Z' | 'E' | 'XY' | 'YZ' | 'XZ' | 'XYZ' | 'XYZE' | null)
-    | undefined {
+  public get axis(): ('X' | 'Y' | 'Z' | 'E' | 'XY' | 'YZ' | 'XZ' | 'XYZ' | 'XYZE' | null) | undefined {
     return this._objRef?.axis;
   }
   @Input()
@@ -185,9 +175,7 @@ export class ThTransformControlsGen<
     }
   }
 
-  public get mouseButtons():
-    | { LEFT: MOUSE; MIDDLE: MOUSE; RIGHT: MOUSE }
-    | undefined {
+  public get mouseButtons(): { LEFT: MOUSE; MIDDLE: MOUSE; RIGHT: MOUSE } | undefined {
     return this._objRef?.mouseButtons;
   }
 }

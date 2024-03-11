@@ -1,15 +1,9 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable @angular-eslint/component-selector, @angular-eslint/component-class-suffix */
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  Type,
-  forwardRef,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, Type, forwardRef } from '@angular/core';
 import { Camera, MOUSE, Vector3 } from 'three';
-import { TrackballControls } from 'three/examples/jsm/controls/TrackballControls';
+import { TrackballControls } from 'three/examples/jsm/controls/TrackballControls.js';
 import { ThControlBase } from '../ThControlBase';
 import { applyValue } from '../util';
 
@@ -63,20 +57,13 @@ export class ThTrackballControls<
     return this._objRef?.enabled;
   }
   @Input()
-  public set screen(value: {
-    left: number;
-    top: number;
-    width: number;
-    height: number;
-  }) {
+  public set screen(value: { left: number; top: number; width: number; height: number }) {
     if (this._objRef) {
       this._objRef.screen = value;
     }
   }
 
-  public get screen():
-    | { left: number; top: number; width: number; height: number }
-    | undefined {
+  public get screen(): { left: number; top: number; width: number; height: number } | undefined {
     return this._objRef?.screen;
   }
   @Input()
@@ -226,9 +213,7 @@ export class ThTrackballControls<
     }
   }
 
-  public get mouseButtons():
-    | { LEFT: MOUSE; MIDDLE: MOUSE; RIGHT: MOUSE }
-    | undefined {
+  public get mouseButtons(): { LEFT: MOUSE; MIDDLE: MOUSE; RIGHT: MOUSE } | undefined {
     return this._objRef?.mouseButtons;
   }
   @Input()
@@ -243,10 +228,7 @@ export class ThTrackballControls<
   @Input()
   public set position0(value: Vector3 | [x: number, y: number, z: number]) {
     if (this._objRef) {
-      this._objRef.position0 = applyValue<Vector3>(
-        this._objRef.position0,
-        value,
-      );
+      this._objRef.position0 = applyValue<Vector3>(this._objRef.position0, value);
     }
   }
   public get position0(): Vector3 | undefined {

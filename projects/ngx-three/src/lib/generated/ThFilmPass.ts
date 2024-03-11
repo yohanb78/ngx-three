@@ -2,16 +2,10 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable @angular-eslint/component-selector, @angular-eslint/component-class-suffix */
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  Type,
-  forwardRef,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, Type, forwardRef } from '@angular/core';
 import { ShaderMaterial } from 'three';
-import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass';
-import { FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js';
+import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass.js';
+import { FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js.js';
 import { ThPassBase } from '../ThPassBase';
 import { ThPass } from './ThPass';
 
@@ -19,18 +13,11 @@ import { ThPass } from './ThPass';
   selector: 'th-filmPass',
   template: '<ng-content/>',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [
-    { provide: ThPassBase, useExisting: forwardRef(() => ThFilmPass) },
-  ],
+  providers: [{ provide: ThPassBase, useExisting: forwardRef(() => ThFilmPass) }],
 })
 export class ThFilmPass<
   T extends FilmPass = FilmPass,
-  TARGS = [
-    noiseIntensity?: number,
-    scanlinesIntensity?: number,
-    scanlinesCount?: number,
-    grayscale?: boolean,
-  ],
+  TARGS = [noiseIntensity?: number, scanlinesIntensity?: number, scanlinesCount?: number, grayscale?: boolean],
 > extends ThPass<T, TARGS> {
   public getType(): Type<FilmPass> {
     return FilmPass;
@@ -44,9 +31,7 @@ export class ThFilmPass<
   }
 
   public get uniforms(): { [name: string]: { value: any } } | undefined {
-    return this._objRef?.uniforms as
-      | { [name: string]: { value: any } }
-      | undefined;
+    return this._objRef?.uniforms as { [name: string]: { value: any } } | undefined;
   }
   @Input()
   public set material(value: ShaderMaterial) {

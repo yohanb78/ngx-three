@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
+import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
 import { ThCallbackLoaderService } from '../ThCallbackLoaderBase';
 
 export interface DRACODecoderConfig {
@@ -7,7 +7,7 @@ export interface DRACODecoderConfig {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DRACOLoaderService extends ThCallbackLoaderService<DRACOLoader> {
   public readonly clazz = DRACOLoader;

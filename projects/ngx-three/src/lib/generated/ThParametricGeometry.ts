@@ -1,15 +1,9 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable @angular-eslint/component-selector, @angular-eslint/component-class-suffix */
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  Type,
-  forwardRef,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, Type, forwardRef } from '@angular/core';
 import { NormalBufferAttributes, Vector3 } from 'three';
-import { ParametricGeometry } from 'three/examples/jsm/geometries/ParametricGeometry';
+import { ParametricGeometry } from 'three/examples/jsm/geometries/ParametricGeometry.js';
 import { ThBufferGeometry } from './ThBufferGeometry';
 
 @Component({
@@ -25,11 +19,7 @@ import { ThBufferGeometry } from './ThBufferGeometry';
 })
 export class ThParametricGeometry<
   T extends ParametricGeometry = ParametricGeometry,
-  TARGS = [
-    func?: (u: number, v: number, target: Vector3) => void,
-    slices?: number,
-    stacks?: number,
-  ],
+  TARGS = [func?: (u: number, v: number, target: Vector3) => void, slices?: number, stacks?: number],
 > extends ThBufferGeometry<NormalBufferAttributes, T, TARGS> {
   public getType(): Type<ParametricGeometry> {
     return ParametricGeometry;

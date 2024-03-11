@@ -1,14 +1,14 @@
 import { Directive, Host, Injectable, NgZone, Pipe, PipeTransform } from '@angular/core';
-import { EXRLoader } from 'three/examples/jsm/loaders/EXRLoader';
+import { EXRLoader } from 'three/examples/jsm/loaders/EXRLoader.js';
 import { ThDataTexture } from '../../generated/ThDataTexture';
 import {
   ThCallbackLoaderBaseDirective,
   ThCallbackLoaderBasePipe,
-  ThCallbackLoaderService
+  ThCallbackLoaderService,
 } from '../ThCallbackLoaderBase';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class EXRLoaderService extends ThCallbackLoaderService<EXRLoader> {
   public clazz = EXRLoader;
@@ -16,7 +16,7 @@ export class EXRLoaderService extends ThCallbackLoaderService<EXRLoader> {
 
 @Pipe({
   name: 'loadEXRTexture',
-  pure: true
+  pure: true,
 })
 export class ThEXRLoaderPipe extends ThCallbackLoaderBasePipe<EXRLoader> implements PipeTransform {
   constructor(protected service: EXRLoaderService) {
@@ -25,10 +25,14 @@ export class ThEXRLoaderPipe extends ThCallbackLoaderBasePipe<EXRLoader> impleme
 }
 
 @Directive({
-  selector: '[loadEXRTexture]'
+  selector: '[loadEXRTexture]',
 })
 export class ThEXRLoaderDirective extends ThCallbackLoaderBaseDirective<EXRLoader> {
-  constructor(@Host() protected host: ThDataTexture, protected zone: NgZone, protected service: EXRLoaderService) {
+  constructor(
+    @Host() protected host: ThDataTexture,
+    protected zone: NgZone,
+    protected service: EXRLoaderService,
+  ) {
     super(host, zone);
   }
 }

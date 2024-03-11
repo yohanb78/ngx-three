@@ -1,24 +1,16 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable @angular-eslint/component-selector, @angular-eslint/component-class-suffix */
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  Type,
-  forwardRef,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, Type, forwardRef } from '@angular/core';
 import { Camera, Object3D } from 'three';
-import { DragControls } from 'three/examples/jsm/controls/DragControls';
+import { DragControls } from 'three/examples/jsm/controls/DragControls.js';
 import { ThControlBase } from '../ThControlBase';
 
 @Component({
   selector: 'th-dragControls',
   template: '<ng-content/>',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [
-    { provide: ThControlBase, useExisting: forwardRef(() => ThDragControls) },
-  ],
+  providers: [{ provide: ThControlBase, useExisting: forwardRef(() => ThDragControls) }],
 })
 export class ThDragControls<
   T extends DragControls = DragControls,

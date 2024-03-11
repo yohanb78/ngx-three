@@ -2,16 +2,10 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable @angular-eslint/component-selector, @angular-eslint/component-class-suffix */
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  Type,
-  forwardRef,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, Type, forwardRef } from '@angular/core';
 import { ShaderMaterial } from 'three';
-import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass';
-import { FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js';
+import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass.js';
+import { FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js.js';
 import { ThPassBase } from '../ThPassBase';
 import { ThPass } from './ThPass';
 
@@ -19,14 +13,9 @@ import { ThPass } from './ThPass';
   selector: 'th-outputPass',
   template: '<ng-content/>',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [
-    { provide: ThPassBase, useExisting: forwardRef(() => ThOutputPass) },
-  ],
+  providers: [{ provide: ThPassBase, useExisting: forwardRef(() => ThOutputPass) }],
 })
-export class ThOutputPass<
-  T extends OutputPass = OutputPass,
-  TARGS = [],
-> extends ThPass<T, TARGS> {
+export class ThOutputPass<T extends OutputPass = OutputPass, TARGS = []> extends ThPass<T, TARGS> {
   public getType(): Type<OutputPass> {
     return OutputPass;
   }
@@ -39,9 +28,7 @@ export class ThOutputPass<
   }
 
   public get uniforms(): { [name: string]: { value: any } } | undefined {
-    return this._objRef?.uniforms as
-      | { [name: string]: { value: any } }
-      | undefined;
+    return this._objRef?.uniforms as { [name: string]: { value: any } } | undefined;
   }
   @Input()
   public set material(value: ShaderMaterial) {

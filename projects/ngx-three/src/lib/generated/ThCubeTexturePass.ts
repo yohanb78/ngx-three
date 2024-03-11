@@ -2,15 +2,9 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable @angular-eslint/component-selector, @angular-eslint/component-class-suffix */
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  Type,
-  forwardRef,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, Type, forwardRef } from '@angular/core';
 import { CubeTexture, Mesh, PerspectiveCamera, Scene } from 'three';
-import { CubeTexturePass } from 'three/examples/jsm/postprocessing/CubeTexturePass';
+import { CubeTexturePass } from 'three/examples/jsm/postprocessing/CubeTexturePass.js';
 import { ThPassBase } from '../ThPassBase';
 import { ThPass } from './ThPass';
 
@@ -18,9 +12,7 @@ import { ThPass } from './ThPass';
   selector: 'th-cubeTexturePass',
   template: '<ng-content/>',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [
-    { provide: ThPassBase, useExisting: forwardRef(() => ThCubeTexturePass) },
-  ],
+  providers: [{ provide: ThPassBase, useExisting: forwardRef(() => ThCubeTexturePass) }],
 })
 export class ThCubeTexturePass<
   T extends CubeTexturePass = CubeTexturePass,

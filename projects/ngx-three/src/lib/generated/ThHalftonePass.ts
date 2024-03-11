@@ -2,19 +2,10 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable @angular-eslint/component-selector, @angular-eslint/component-class-suffix */
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  Type,
-  forwardRef,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, Type, forwardRef } from '@angular/core';
 import { ShaderMaterial } from 'three';
-import {
-  HalftonePass,
-  HalftonePassParameters,
-} from 'three/examples/jsm/postprocessing/HalftonePass';
-import { FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js';
+import { HalftonePass, HalftonePassParameters } from 'three/examples/jsm/postprocessing/HalftonePass.js';
+import { FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js.js';
 import { ThPassBase } from '../ThPassBase';
 import { ThPass } from './ThPass';
 
@@ -22,9 +13,7 @@ import { ThPass } from './ThPass';
   selector: 'th-halftonePass',
   template: '<ng-content/>',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [
-    { provide: ThPassBase, useExisting: forwardRef(() => ThHalftonePass) },
-  ],
+  providers: [{ provide: ThPassBase, useExisting: forwardRef(() => ThHalftonePass) }],
 })
 export class ThHalftonePass<
   T extends HalftonePass = HalftonePass,
@@ -42,9 +31,7 @@ export class ThHalftonePass<
   }
 
   public get uniforms(): { [name: string]: { value: any } } | undefined {
-    return this._objRef?.uniforms as
-      | { [name: string]: { value: any } }
-      | undefined;
+    return this._objRef?.uniforms as { [name: string]: { value: any } } | undefined;
   }
   @Input()
   public set material(value: ShaderMaterial) {
